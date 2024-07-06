@@ -33,49 +33,915 @@
       <h1><br />C h a p t e r s</h1>
       <br />
     </div>
+    
+    <div class="moiz">
+      <h1>-: Objects :-</h1>
+      <p class="ali">
+        I'm sure you've seen tables like this, comparing different packages offered by a webhost
+      </p>
+      <table style="background-color: white;" border="1">
+        <tr style="background-color: rgb(138, 128, 128);">
+          <td></td>
+          <td><h3>Hosting PLans</h3></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style="background-color: orange;">Basic</td>
+          <td style="background-color: green;">Professional</td>
+          <td style="background-color: blue;">Ultimate</td>
+        </tr>
+        <tr>
+          <td>Monthly</td>
+          <td style="background-color: orange;">$3.99</td>
+          <td style="background-color: green;">$5.99</td>
+          <td style="background-color: blue;">$9.99</td>
+        </tr>
+        <tr>
+          <td>Disk Space</td>
+          <td style="background-color: orange;">100GB</td>
+          <td style="background-color: green;">500GB</td>
+          <td style="background-color: blue;">2000GB</td>
+        </tr>
+        <tr>
+          <td>Data Trasfer</td>
+          <td style="background-color: orange;">1000 GB/Mo</td>
+          <td style="background-color: green;">5000 GB/Mo</td>
+          <td style="background-color: blue;">20000 GB/Mo</td>
+        </tr>
+        <tr>
+          <td>Site Pages</td>
+          <td style="background-color: orange;">10</td>
+          <td style="background-color: green;">50</td>
+          <td style="background-color: blue;">500</td>
+        </tr>
+        <tr>
+          <td>Discount mo</td>
+          <td style="background-color: orange;">Jul,Aug</td>
+          <td style="background-color: green;">Jul,Aug,Dec</td>
+          <td style="background-color: blue;">Jul,Aug</td>
+        </tr>
+      </table>
+      <p class="ali">
+        If you wanted to use this data in JavaScript, you could assign each value to a different <br>
+variable, like this. <br>
+1 var plan1Name = "Basic"; <br>
+2 var plan1Price = 3.99; <br>
+3 var plan1Space = 100; <br>
+4 var plan1Data = 1000; <br>
+5 var plan1Pages = 10; <br>
+6 var plan2Name = "Professional"; <br>
+7 var plan2Price = 5.99; <br>
+8 var plan2Space = 500; <br>
+9 var plan2Data = 5000; <br>
+10 var plan2Pages = 50; <br>
+11 var plan3Name = "Ultimate"; <br>
+12 var plan3Price = 9.99; <br>
+13 var plan3Space = 2000; <br>
+14 var plan3Data = 20000; <br>
+15 var plan3Pages = 500; <br>
+Having made all these variable assignments, you could then, for example, write this <br>
+JavaScript statement... <br>
+alert("The cost of the " + plan2Name + "package is $" + plan2Price + " per month."); <br>
+...and an alert would display saying, "The cost of the Professional package is $5.99 per <br>
+month." <br>
+But assigning all these values to variables is unwieldy, and can lead to problems if things <br>
+get complicated. A better way to handle the situation is to create objects with properties. This <br>
+is a handier scheme that more accurately reflects the 2-dimensional, gridlike nature of the host <br>
+company's table that we started with. This table shows all the options expressed as objects and <br>
+properties.
+      </p>
+      <table style="background-color: white;" border="1">
+        <tr style="background-color: yellow;">
+          <td><h3>Object</h3></td>
+          <td><h3>PLans 1</h3></td>
+          <td><h3>PLans 2</h3></td>
+          <td><h3>PLans 3</h3></td>
+        </tr>
+        <tr>
+          <td>name(a property)</td>
+          <td>"Basic"</td>
+          <td>"Professional"</td>
+          <td>"Ultimate"</td>
+        </tr>
+        <tr>
+          <td>Price(a property)</td>
+          <td>$3.99</td>
+          <td>$5.99</td>
+          <td>$9.99</td>
+        </tr>
+        <tr>
+          <td>Space(a property)</td>
+          <td>100GB</td>
+          <td>500GB</td>
+          <td>2000GB</td>
+        </tr>
+        <tr>
+          <td>Trasfer(a property)</td>
+          <td>1000 GB/Mo</td>
+          <td>5000 GB/Mo</td>
+          <td>20000 GB/Mo</td>
+        </tr>
+        <tr>
+          <td>Pages(a property)</td>
+          <td>10</td>
+          <td>50</td>
+          <td>500</td>
+        </tr>
+      </table>
+      <p class="ali">
+        In this example, each hosting plan is an object—plan1, plan2, plan3. And each object has <br>
+5 properties—name, cost, space, transfer, and pages. Properties are just variables that are <br>
+attached to an object. In this case, there's a string property (name) and four number properties <br>
+(price, space, transfer, and pages) for each object. <br>
+In code we refer to objects and their properties using dot notation. Here's the statement <br>
+that creates the alert shown above, with object-property pairs replacing the simple variables. <br>
+alert("The cost of the " + plan2.name + " package is $" + plan2.price + " per month."); <br>
+plan2.name represents "Professional". plan2.price represents 5.99. <br>
+The most straightforward way to define an object and its properties is this. <br>
+1 var plan1 = { <br>
+2 name: "Basic", <br>
+3 price: 3.99, <br>
+4 space: 100, <br>
+5 transfer: 1000, <br>
+6 pages: 10 <br>
+7 }; <br>
+Things to notice: <br>
+The code begins like any variable definition, with the keyword var, followed by the <br>
+object name, and then an equal sign. <br>
+But then, instead of a value, there's a curly bracket, whose twin comes at the end of the <br>
+block. <br>
+220 <br>
+Each property begins with a name, followed by a colon, and then a value. <br>
+Each property definition except the last ends with a comma. <br>
+The closing curly bracket is followed by a semicolon, because of the equal sign in the <br>
+first line. <br>
+Now let's add one more property, discountMonths. If the current month is July, August, <br>
+or December, the customer gets a 20 percent discount on the hosting plan. To keep track of <br>
+those special months, we'll assign them to a new property. This new property is an array, not a <br>
+simple variable. <br>
+plan1.discountMonths = [6, 7, 11]; <br>
+The statement above creates a new property of the object plan1, discountMonths, and <br>
+assigns an array to it representing the three months when the customer gets a discount. <br>
+You refer to the individual elements of this array property the same way you'd refer to the <br>
+elements of any array, with a number inside brackets, but using the dot notation of the objectproperty pair, plan1.discountMonths. <br>
+var mo = plan1.discountMonths[2]; <br>
+The statement above assigns the third element of the array, the number representing <br>
+December, to the variable mo. <br>
+So far, we've defined only one object, plan1, and its properties. To complete the set of <br>
+objects that includes plan2 and plan3, you'd have to do the same thing again, and then again. <br>
+You may be thinking that this all takes more work than just defining 15 simple variables as I <br>
+did early in the chapter, but defining objects and their properties is actually a better way to go,  <br>
+for reasons that I'll discuss in later chapters. Plus, there's a less labor-intensive way to go <br>
+about it, which you'll also learn.
+      </p>
+    </div>
+    <div class="moiz">
+      <h1>-: Objects: Properties :-</h1>
+      <p class="ali">
+        To change the value of an object's number value, use a simple assignment statement, the <br>
+same way you'd assign a value to a plain variable. <br>
+deal3.cost = 79.95; <br>
+Whatever the value of deal3.cost was, now it's 79.95. <br>
+Of course, you can assign a string instead of a number. <br>
+deal3.name = "Super-saver"; <br>
+Whatever the value of deal3.name was, now it's "Super-saver". <br>
+You can also assign an array list to a property. <br>
+deal3.features = ["Guarantee", "Free Ship"]; <br>
+Whatever the value of deal3.features was, now it's an array with the elements <br>
+"Guarantee" and "Free Ship." <br>
+You can also assign a Boolean value. <br>
+deal3.membersOnly = false; <br>
+Whatever the value of deal3.membersOnly was, now it's false. <br>
+You can also use an assignment statement to define a new property for an object. Suppose <br>
+the object deal3 has some properties, but none of them are deal3.market. Now you want to <br>
+add it, while assigning it a value. <br>
+deal3.market = "regional"; <br>
+Just as you can create an undefined variable by not assigning it a value, you can create an <br>
+object without any properties. <br>
+var deal4 = {}; <br>
+If you want to create a property now and assign it a value later, you can create it with a <br>
+value of undefined. <br>
+deal3.market = undefined; <br>
+Note that the keyword undefined isn't in quotation marks. It isn't a string. <br>
+You can delete a property of an object. <br>
+delete deal3.market; <br>
+You can check to see if a property of an object exists. The following statement tests <br>
+whether there is such a thing as deal3.market and assigns the result (true or false) to the <br>
+variable propertyExists. <br>
+propertyExists = "market" in deal3; <br>
+Things to notice: <br>
+You could use any legal variable name instead of propertyExists. <br>
+The keyword in asks, "The property market is in the object deal3—true or false?" <br>
+The property market is in quotes. <br>
+The object deal3 is not in quotes. 
+      </p>
+    </div>
 
-    <div class="moiz">
-      <h1>-: OBJECTS :-</h1>
-      <p class="ali">
-        <!-- 1 -->
-      </p>
-    </div>
-    <div class="moiz">
-      <h1>-: Objects:Properties :-</h1>
-      <p class="ali">
-        <!-- 2 -->
-      </p>
-    </div>
     <div class="moiz">
       <h1>-: Objects:Methods :-</h1>
       <p class="ali">
-        <!-- 2 -->
+        Let's return to the chart showing different hosting plans.
+        <table style="background-color: white;" border="1">
+          <tr style="background-color: rgb(107, 104, 104);">
+            <td></td>
+            <td><h3>Hosting PLans</h3></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+          <td style="background-color: orange;">Basic</td>
+          <td style="background-color: green;">Professional</td>
+          <td style="background-color: blue;">Ultimate</td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td style="background-color: orange;">$3.99</td>
+            <td style="background-color: green;">$5.99</td>
+            <td style="background-color: blue;">$9.99</td>
+          </tr>
+          <tr>
+            <td>Disk Space</td>
+            <td style="background-color: orange;">100GB</td>
+            <td style="background-color: green;">500GB</td>
+            <td style="background-color: blue;">2000GB</td>
+          </tr>
+          <tr>
+            <td>Data Trasfer</td>
+            <td style="background-color: orange;">1000 GB/Mo</td>
+            <td style="background-color: green;">5000 GB/Mo</td>
+            <td style="background-color: blue;">20000 GB/Mo</td>
+          </tr>
+          <tr>
+            <td>Site Pages</td>
+            <td style="background-color: orange;">10</td>
+            <td style="background-color: green;">50</td>
+            <td style="background-color: blue;">500</td>
+          </tr>
+          <tr>
+            <td>Discount mo</td>
+            <td  style="background-color: orange;">Jul,Aug</td>
+            <td  style="background-color: green;">Jul,Aug,Dec</td>
+            <td  style="background-color: blue;">Jul,Aug</td>
+          </tr>
+        </table>
+      </p>
+      <p class="ali">
+        We're going to write a function that calculates the annual charge based on this chart. Note  <br>
+that if the user signs up at certain times of the year, he gets a discount for the entire year. If he <br>
+signs up for the Basic plan in July or August, he gets 20 per cent off. If he signs up for the <br>
+Professional plan in July, August, or December, he gets 20 per cent off. If he signs up for the <br>
+Ultimate plan in July or August, he gets 20 per cent off. <br>
+We begin by creating three objects with properties. This is the object and its properties <br>
+that represent the Basic plan. <br>
+1 var plan1 = { <br>
+2 name: "Basic", <br>
+3 price: 3.99, <br>
+4 space: 100, <br>
+5 transfer: 1000, <br>
+6 pages: 10, <br>
+7 discountMonths: [6, 7] <br>
+8 }; <br>
+The function cycles through all the discount months (line 5) checking to see if any of them <br>
+happen to be the current month (line 6). If so, it calculates a 20 percent discount by multiplying <br>
+the regular price by .8. Then it multiplies the monthly price, discounted or not, by 12, to get the <br>
+annual price, and returns the number to the calling code (line 11). <br>
+1 function calcAnnual() { <br>
+2 var bestPrice = plan1.price; <br>
+3 var currDate = new Date(); <br>
+4 var thisMo = currDate.getMonth(); <br>
+5 for (var i = 0; i < plan1.discountMonths.length; i++) { <br>
+6 if (plan1.discountMonths[i] === thisMo) { <br>
+7 bestPrice = plan1.price * .8; <br>
+8 break; <br>
+9 } <br>
+10 } <br>
+11 return bestPrice * 12; <br>
+12 } <br>
+This is the calling statement that executes the function. <br>
+var annualPrice = calcAnnual(); <br>
+But now let's make the function more flexible so the discount rate can vary, depending on <br>
+the value that the calling statement passes to it. Here's the revision, with the percentage to be <br>
+charged, passed to the parameter percentIfDisc, if the user qualifies for a discount. <br>
+1 function calcAnnual(percentIfDisc) { <br>
+2 var bestPrice = plan1.price; <br>
+3 var currDate = new Date(); <br>
+4 var thisMo = currDate.getMonth(); <br>
+5 for (var i = 0; i < plan1.discountMonths.length; i++) { <br>
+6 if (plan1.discountMonths[i] === thisMo) { <br>
+7 bestPrice = plan1.price * percentIfDisc; <br>
+8 break; <br>
+9 } <br>
+10 } <br>
+11 return bestPrice * 12; <br>
+12 } <br>
+This is the calling statement that passes the value to the function and executes it. In this <br>
+example, it passes the value .85, representing a discount of 15 percent. <br>
+var annual Price = calcAnnual(.85); <br>
+You've learned that you can attach a variable to an object, and the variable becomes the <br>
+object's property. Here's more news. You can attach a function to an object, and the function <br>
+becomes that object's method. It does the same task the regular function does, but now it's <br>
+attached to an object. The reasons why you would want to use a method rather than an ordinary <br>
+function will become clear in subsequent chapters. For now, let me show you how it's done. <br>
+This code inserts the function that I coded above into the object definition, so now it's a <br>
+method. Operationally, it's the same as the plain-vanilla function, but now it's attached to the <br>
+object. <br>
+1 var plan1 = { <br>
+2 name: "Basic", <br>
+3 price: 3.99, <br>
+4 space: 100, <br>
+5 transfer: 1000, <br>
+6 pages: 10, <br>
+7 discountMonths: [6, 7], <br>
+8 calcAnnual: function(percentIfDisc) { <br>
+9 var bestPrice = plan1.price; <br>
+10 var currDate = new Date(); <br>
+11 var thisMo = currDate.getMonth(); <br>
+12 for (var i = 0; i < plan1.discountMonths.length; i++) { <br>
+13 if (plan1.discountMonths[i] === thisMo) { <br>
+14 bestPrice = plan1.price * percentIfDisc; <br>
+15 break; <br>
+16 } <br>
+17 } <br>
+18 return bestPrice * 12; <br>
+19 } <br>
+20 }; <br>
+Things to notice: <br>
+Except for the first line, every line of the method is identical to the code I used to create <br>
+the plain-vanilla function that we started with. <br>
+The method definition begins the same way a property definition begins, with the name <br>
+followed by a colon. <br>
+A comma ends every property definition and method definition except for the last <br>
+property or method. If you were to add a property or method below the calcAnnual <br>
+method definition, you'd need to insert a comma after the closing curly bracket of the <br>
+calcAnnual definition. <br>
+The parentheses that indicate that a variable name is the name of a function come <br>
+immediately after the keyword function. Parameters, if there are any, go inside the <br>
+parens, as in any function definition. <br>
+This is how you'd call the method. <br>
+var annualPrice = plan1.calcAnnual(.85); <br>
+I'm going to add a refinement to the method definition. In the definition I coded above, the <br>
+properties are referred to using the name of the object—for example, plan1.price. This <br>
+works, but a better approach, for reasons that will become clear in subsequent chapters, is to <br>
+replace the name of the object with the keyword this. When JavaScript sees this keyword, it <br>
+knows you're referring to the object that's being defined. <br>
+1 var plan1 = { <br>
+2 name: "Basic", <br>
+3 price: 3.99, <br>
+4 space: 100, <br>
+5 transfer: 1000, <br>
+6 pages: 10, <br>
+7 discountMonths: [6, 7], <br>
+8 calcAnnual: function(percentIfDisc) { <br>
+9 var bestPrice = this.price; <br>
+10 var currDate = new Date(); <br>
+11 var thisMo = currDate.getMonth(); <br>
+12 for (var i = 0; i < this.discountMonths.length; i++) { <br>
+13 if (this.discountMonths[i] === thisMo) { <br>
+14 bestPrice = this.price * percentIfDisc; <br>
+15 break; <br>
+16 } <br>
+17 } <br>
+18 return bestPrice * 12; <br>
+19 } <br>
+20 }; <br>
+When you write this.whatever, JavaScript is smart enough to understand that you're <br>
+referring to a property of the object that's being defined—in this case, plan1.
       </p>
     </div>
     <div class="moiz">
-      <h1>-: Objects:Constructors :-</h1>
+      <h1>-: Objects: Constructors :-</h1>
       <p class="ali">
-        <!-- 2 -->
+        Again, here's a version of the chart showing different hosting plans.
+        <table style="background-color: white;" border="1">
+          <tr style="background-color: rgb(107, 104, 104);">
+            <td></td>
+            <td><h3>Hosting PLans</h3></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+          <td style="background-color: orange;">Basic</td>
+          <td style="background-color: green;">Professional</td>
+          <td style="background-color: blue;">Ultimate</td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td style="background-color: orange;">$3.99</td>
+            <td style="background-color: green;">$5.99</td>
+            <td style="background-color: blue;">$9.99</td>
+          </tr>
+          <tr>
+            <td>Disk Space</td>
+            <td style="background-color: orange;">100GB</td>
+            <td style="background-color: green;">500GB</td>
+            <td style="background-color: blue;">2000GB</td>
+          </tr>
+          <tr>
+            <td>Data Trasfer</td>
+            <td style="background-color: orange;">1000 GB/Mo</td>
+            <td style="background-color: green;">5000 GB/Mo</td>
+            <td style="background-color: blue;">20000 GB/Mo</td>
+          </tr>
+          <tr>
+            <td>Site Pages</td>
+            <td style="background-color: orange;">10</td>
+            <td style="background-color: green;">50</td>
+            <td style="background-color: blue;">500</td>
+          </tr>
+        </table>
+      </p>
+      <p class="ali">
+        This is how I encapsulated the information for the Basic plan in an object and five <br>
+properties. <br>
+1 var plan1 = { <br>
+2 name: "Basic", <br>
+3 price: 3.99, <br>
+4 space: 100, <br>
+5 transfer: 1000, <br>
+6 pages: 10 <br>
+7 }; <br>
+But that only gets us an object that represents the first plan. I'd have to do the same thing  <br>
+again for the Professional and Ultimate plans. This is too much hand craftsmanship. We need a <br>
+factory to crank out these things by the dozen. JavaScript lets you build such a factory. It's <br>
+called a constructor function. <br>
+1 function Plan(name, price, space, transfer, pages) { <br>
+2 this.name = name; <br>
+3 this.price = price; <br>
+4 this.space = space; <br>
+5 this.transfer = transfer; <br>
+6 this.pages = pages; <br>
+7 } <br>
+This would be a plain-vanilla function definition but for two differences: <br>
+The function name is capitalized. JavaScript doesn't care whether you do this or not, but <br>
+it's conventional to do it to distinguish constructor functions from regular functions. <br>
+Each of the parameter values is assigned to a variable. But the variable is a property <br>
+attached to some object whose name hasn't been specified yet. But don't worry. Just as the <br>
+parameter values will be filled in by the calling code, so will the name of the object. <br>
+This is the calling code that creates the object for the Basic plan. <br>
+var plan1 = new Plan("Basic", 3.99, 100, 1000, 10); <br>
+This would be just a regular function call if it weren't for that new. It's the keyword that <br>
+tells JavaScript to create a new object. The name of the new object is plan1. Its properties are <br>
+enumerated inside the parentheses. <br>
+Now it's easy to mass-produce as many objects as you want, using the same pattern. <br>
+1 var plan1 = new Plan("Basic", 3.99, 100, 1000, 10); <br>
+2 var plan2 = new Plan("Premium", 5.99, 500, 5000, 50); <br>
+3 var plan3 = new Plan("Ultimate", 9.99, 2000, 20000, 500); <br>
+It's common to use the same names for parameters and properties, but you don't have to. <br>
+You could write: <br>
+1 function Plan(name, price, space, transfer, pages) { <br>
+2 this.doc = name; <br>
+3 this.grumpy = price; <br>
+4 this.sleepy = space; <br>
+5 this.bashful = transfer; <br>
+6 this.sneezy = pages; <br>
+7 } 
       </p>
     </div>
     <div class="moiz">
       <h1>-: Objects:Constructors for methods :-</h1>
       <p class="ali">
-        <!-- 2 -->
+        Here's the version of the hosting chart that includes discount months.
+        <table style="background-color: white;" border="1">
+          <tr style="background-color: rgb(107, 104, 104);">
+            <td></td>
+            <td><h3>Hosting PLans</h3></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+          <td style="background-color: orange;">Basic</td>
+          <td style="background-color: green;">Professional</td>
+          <td style="background-color: blue;">Ultimate</td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td style="background-color: orange;">$3.99</td>
+            <td style="background-color: green;">$5.99</td>
+            <td style="background-color: blue;">$9.99</td>
+          </tr>
+          <tr>
+            <td>Disk Space</td>
+            <td style="background-color: orange;">100GB</td>
+            <td style="background-color: green;">500GB</td>
+            <td style="background-color: blue;">2000GB</td>
+          </tr>
+          <tr>
+            <td>Data Trasfer</td>
+            <td style="background-color: orange;">1000 GB/Mo</td>
+            <td style="background-color: green;">5000 GB/Mo</td>
+            <td style="background-color: blue;">20000 GB/Mo</td>
+          </tr>
+          <tr>
+            <td>Site Pages</td>
+            <td style="background-color: orange;">10</td>
+            <td style="background-color: green;">50</td>
+            <td style="background-color: blue;">500</td>
+          </tr>
+          <tr>
+            <td>Discount mo</td>
+            <td  style="background-color: orange;">Jul,Aug</td>
+            <td  style="background-color: green;">Jul,Aug,Dec</td>
+            <td  style="background-color: blue;">Jul,Aug</td>
+          </tr>
+        </table>
+      </p>
+      <p class="ali">
+        In Chapter 71 I showed you how to attach a function to an object, using the same approach  <br>
+you use when you attach a variable to an object. When you attach a variable to an object, it's <br>
+called a property of the object. When you attach a function to an object, it's called a method of <br>
+the object. In the example below, the method checks to see if the current date is in a discount <br>
+month and, if so, applies the discount. Then the method calculates the annual charge. <br>
+If you're creating more than one object with the same pattern of properties and methods, <br>
+it's a convenience to build the method as well as the properties into the constructor function. <br>
+In the following code, the constructor creates the same method for every object that is <br>
+created, as it creates all the properties for each object. <br>
+1 function Plan(name, price, space, transfer, pages, discountMonths) { <br>
+2 this.name = name; <br>
+3 this.price = price; <br>
+4 this.space = space; <br>
+5 this.transfer = transfer; <br>
+6 this.pages = pages; <br>
+7 this.discountMonths = discountMonths; <br>
+8 this.calcAnnual = function(percentIfDisc) { <br>
+9 var bestPrice = this.price; <br>
+10 var currDate = new Date(); <br>
+11 var thisMo = currDate.getMonth(); <br>
+12 for (var i = 0; i < this.discountMonths.length; i++) { <br>
+13 if (this.discountMonths[i] === thisMo) { <br>
+14 bestPrice = this.price * percentIfDisc; <br>
+15 break; <br>
+16 } <br>
+17 } <br>
+18 return bestPrice * 12; <br>
+19 }; <br>
+20 } <br>
+Things to notice about line 8, the beginning of the method definition: <br>
+Like the property definitions above it, the line begins with the keyword this, referring to <br>
+the name of whatever object is being constructed at any given time. <br>
+The next three pieces are the same: a dot, the name of the method, and an equal sign. <br>
+The next piece is different: the keyword function. <br>
+In this case, a single parameter is inside the parentheses, percentIfDisc. This is not a <br>
+parameter that's part of the constructor. It's a parameter of the method that the constructor <br>
+will create for each object. A value is passed to it not when a new object is created using <br>
+the constructor, but when the method, having already been created along with its object <br>
+via the constructor, is called. <br>
+This is the code that calls the constructor function to create three new objects that <br>
+correspond to the three hosting plans. <br>
+1 var p1 = new Plan("Basic", 3.99, 100, 1000, 10, [6, 7]); <br>
+2 var p2 = new Plan("Premium", 5.99, 500, 5000, 50, [6, 7, 11]); <br>
+3 var p3 = new Plan("Ultimate", 9.99, 2000, 20000, 500, [6, 7]); <br>
+Once the objects and their properties and method are created by the code above, this is <br>
+the code that calls, for example, the method for the Premium plan. <br>
+var annualPrice = p2.calAnnual(.85); <br>
+The main difference between the method definition in the one-off literal object definition <br>
+(no constructor) and the method definition in the constructor function is the first line. In other <br>
+respects, both definitions are identical. <br>
+This is the first line of a method definition when an object is created on a one-off basis <br>
+without a constructor: <br>
+calcAnnual: function(percentIfDisc) { <br>
+This is the first line of a method definition within a constructor: <br>
+this.calcAnnual = function(percentIfDisc) { <br>
+There are two other differences. Because in the constructor function the method definition <br>
+begins with an assignment (something = something else), you need a semicolon after the <br>
+closing curly bracket. And no comma is necessary if another property or method definition <br>
+follows. 
       </p>
     </div>
     <div class="moiz">
       <h1>-: Objects:Prototypes :-</h1>
       <p class="ali">
-        <!-- 2 -->
+        In the last chapter you created three objects using a constructor. Each object <br>
+corresponded to a hosting plan. Each object had six properties and one method. Here's a chart <br>
+showing the three objects and their properties and method. Check out the last row, colored <br>
+green in the table, the one representing the methods for the three objects... <br>
+<table style="background-color: brown;" border="1">
+  <tr style="background-color: yellow;">
+    <td><h3>Object</h3></td>
+    <td><h3>PLans 1</h3></td>
+    <td><h3>PLans 2</h3></td>
+    <td><h3>PLans 3</h3></td>
+  </tr>
+  <tr>
+    <td>name(a property)</td>
+    <td>"Basic"</td>
+    <td>"Professional"</td>
+    <td>"Ultimate"</td>
+  </tr>
+  <tr>
+    <td>Price(a property)</td>
+    <td>$3.99</td>
+    <td>$5.99</td>
+    <td>$9.99</td>
+  </tr>
+  <tr>
+    <td>Space(a property)</td>
+    <td>100GB</td>
+    <td>500GB</td>
+    <td>2000GB</td>
+  </tr>
+  <tr>
+    <td>Trasfer(a property)</td>
+    <td>1000 GB/Mo</td>
+    <td>5000 GB/Mo</td>
+    <td>20000 GB/Mo</td>
+  </tr>
+  <tr>
+    <td>Pages(a property)</td>
+    <td>10</td>
+    <td>50</td>
+    <td>500</td>
+  </tr>
+  <tr>
+    <td>Discount Mounth(a property)</td>
+    <td>Jul,Aug</td>
+    <td>Jul,Aug,Dec</td>
+    <td>Jul,Aug</td>
+  </tr>
+  <tr style="background-color: chartreuse;">
+    <td>calcAnnual(a method)</td>
+    <td>calculates annual charge</td>
+    <td>calculates annual charge</td>
+    <td>calculates annual charge</td>
+  </tr>
+</table>
+      </p>
+      <p class="ali">
+        There's something inelegant about the green last row. The properties shown in the rows <br>
+above it are customized for each object, but the method is always the same from object to <br>
+object. The constructor function keeps duplicating the same method for each object, object <br>
+after object. If we were to create 100 objects using the constructor, JavaScript would <br>
+duplicate the same method 100 times, once for each object. It would work, but it ain't pretty. <br>
+This table, which shows all of the objects sharing a single method, makes more sense. <br>
+      </p>
+      <table style="background-color: aliceblue;" border="1">
+        <tr>
+          <td>name(a property)</td>
+          <td>"Basic"</td>
+          <td>"Professional"</td>
+          <td>"Ultimate"</td>
+        </tr>
+        <tr>
+          <td>Price(a property)</td>
+          <td>$3.99</td>
+          <td>$5.99</td>
+          <td>$9.99</td>
+        </tr>
+        <tr>
+          <td>Space(a property)</td>
+          <td>100GB</td>
+          <td>500GB</td>
+          <td>2000GB</td>
+        </tr>
+        <tr>
+          <td>Trasfer(a property)</td>
+          <td>1000 GB/Mo</td>
+          <td>5000 GB/Mo</td>
+          <td>20000 GB/Mo</td>
+        </tr>
+        <tr>
+          <td>Pages(a property)</td>
+          <td>10</td>
+          <td>50</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>Discount Mounth(a property)</td>
+          <td>Jul,Aug</td>
+          <td>Jul,Aug,Dec</td>
+          <td>Jul,Aug</td>
+        </tr>
+        <tr>
+          <td style="background-color: green;">calcAnnual(a method)</td>
+          <td style="background-color: palevioletred;align-items: center;">calculates annual charge (Shared by all Object)</td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+        </tr>
+      </table>
+      <p class="ali">
+        We want only one copy of the method, shared by all objects created with the constructor, <br>
+no matter how many objects are created. <br>
+How do we do it? With a prototype statement. <br>
+First, we don't include the method in the constructor function, because that creates a copy <br>
+of the method for every single object that's created with the constructor. <br>
+Instead, we define the method as a prototype of the constructor, this way. <br>
+1 Plan.prototype.calcAnnual = function(percentIfDisc) { <br>
+2 var bestPrice = this.price; <br>
+3 var currDate = new Date(); <br>
+4 var thisMo = currDate.getMonth(); <br>
+5 for (var i = 0; i < this.discountMonths.length; i++) { <br>
+6 if (this.discountMonths[i] === thisMo) { <br>
+7 bestPrice = this.price * percentIfDisc; <br>
+8 break; <br>
+9 } <br>
+10 } <br>
+11 return bestPrice * 12; <br>
+12 }; <br>
+Now, all objects created with the constructor Plan will share the same copy of the <br>
+method calcAnnual. There's no unnecessary duplication. <br>
+Note that except for the first line, the method is coded exactly as I coded it when it was <br>
+part of the constructor definition. Even the first line is the same, if you consider only the parts <br>
+on the right side of the equal sign. The parts on the left side, connected by dots, are: <br>
+the name of the constructor function, in this case Plan <br>
+the keyword prototype <br>
+the name of the method that all objects created with Plan will share, in this case <br>
+calcAnnual <br>
+Objects can have prototype properties as well as prototype methods. Suppose you wanted <br>
+all objects created with the Plan to share the same property, cancellable, with a value of <br>
+true. You'd code the prototype this way. <br>
+Plan.prototype.cancellable = true; <br>
+Now all objects created with the constructor function Plan share a property, <br>
+cancellable, whose value is true. <br>
+This is how the object table looks with the prototype method and the prototype property. <br>
+      </p>
+      <table style="background-color: aliceblue;" border="1">
+        <tr style="background-color: yellow;">
+          <td><h3>Object</h3></td>
+          <td><h3>PLans 1</h3></td>
+          <td><h3>PLans 2</h3></td>
+          <td><h3>PLans 3</h3></td>
+        </tr>
+        <tr>
+          <td>name(a property)</td>
+          <td>"Basic"</td>
+          <td>"Professional"</td>
+          <td>"Ultimate"</td>
+        </tr>
+        <tr>
+          <td>Price(a property)</td>
+          <td>$3.99</td>
+          <td>$5.99</td>
+          <td>$9.99</td>
+        </tr>
+        <tr>
+          <td>Space(a property)</td>
+          <td>100GB</td>
+          <td>500GB</td>
+          <td>2000GB</td>
+        </tr>
+        <tr>
+          <td>Trasfer(a property)</td>
+          <td>1000 GB/Mo</td>
+          <td>5000 GB/Mo</td>
+          <td>20000 GB/Mo</td>
+        </tr>
+        <tr>
+          <td>Pages(a property)</td>
+          <td>10</td>
+          <td>50</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>Discount Mounth(a property)</td>
+          <td>Jul,Aug</td>
+          <td>Jul,Aug,Dec</td>
+          <td>Jul,Aug</td>
+        </tr>
+        <tr>
+          <td style="background-color: green;">calcAnnual(a method)</td>
+          <td style="background-color: palevioletred;align-items: center;">calculates annual charge (Shared by all Object)</td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+        </tr>
+        <tr>
+          <td style="background-color: green;">cancellable(a property)</td>
+          <td style="background-color: palevioletred;align-items: center;">true (Shared by all Object)</td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+        </tr>
+      </table>
+      <p class="ali">
+        It's possible to override a prototype for any individual object. For example, suppose you <br>
+want all objects created with the constructor to share the same cancellable property, except <br>
+for the least expensive plan, plan1, with the name "Basic." This is the statement that does it. <br>
+plan1.cancellable = false; <br>
+All objects created with the constructor still share the property cancellable, but now <br>
+the value of that property for one object is different from all the others. Here's the chart <br>
+      </p>
+      <table style="background-color: aliceblue;" border="1">
+        <tr style="background-color: yellow;">
+          <td><h3>Object</h3></td>
+          <td><h3>PLans 1</h3></td>
+          <td><h3>PLans 2</h3></td>
+          <td><h3>PLans 3</h3></td>
+        </tr>
+        <tr>
+          <td>name(a property)</td>
+          <td>"Basic"</td>
+          <td>"Professional"</td>
+          <td>"Ultimate"</td>
+        </tr>
+        <tr>
+          <td>Price(a property)</td>
+          <td>$3.99</td>
+          <td>$5.99</td>
+          <td>$9.99</td>
+        </tr>
+        <tr>
+          <td>Space(a property)</td>
+          <td>100GB</td>
+          <td>500GB</td>
+          <td>2000GB</td>
+        </tr>
+        <tr>
+          <td>Trasfer(a property)</td>
+          <td>1000 GB/Mo</td>
+          <td>5000 GB/Mo</td>
+          <td>20000 GB/Mo</td>
+        </tr>
+        <tr>
+          <td>Pages(a property)</td>
+          <td>10</td>
+          <td>50</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>Discount Mounth(a property)</td>
+          <td>Jul,Aug</td>
+          <td>Jul,Aug,Dec</td>
+          <td>Jul,Aug</td>
+        </tr>
+        <tr>
+          <td style="background-color: green;">calcAnnual(a method)</td>
+          <td style="background-color: palevioletred;align-items: center;">calculates annual charge (Shared by all Object)</td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+        </tr>
+        <tr>
+          <td style="background-color: green;">cancellable(a property)</td>
+          <td style="background-color: white;">eception this one's false</td>
+          <td style="background-color: palevioletred;align-items: center;">true (Shared by all Object)</td>
+          <td style="background-color: palevioletred;align-items: center;"></td>
+        </tr>
+      </table>
+      <p class="ali">
+        In the same way, you could override a shared prototype method for any individual objects <br>
+as well.
       </p>
     </div>
     <div class="moiz">
-      <h1>-: Objects:Checking for properties and methods :-</h1>
+      <h1>-: OObjects:Checking for properties and methods :-</h1>
       <p class="ali">
-        <!-- 2 -->
+        You can check to see if an object has a particular property by writing a simple statement <br>
+like this. <br>
+var gotTheProperty = "price" in plan1; <br>
+Here are the parts: <br>
+the property in question, enclosed in quotes—in this case, price <br>
+the keyword in <br>
+the object, in this case, plan1 <br>
+Again, the question is, does the object named plan1 have a property called price? In <br>
+other words, is there such a thing as plan1.price? In the example of three hosting plans that <br>
+we've been using, plan1 does have a price, 3.99. So gotTheProperty is assigned true. But <br>
+plan1 doesn't have a property named location. So if we write... <br>
+var gotTheProperty = "location" in plan1; <br>
+...the variable gotTheProperty is false. <br>
+plan1 in the example also has a method named calcAnnual. A method is a type of <br>
+property of an object, so if you write... <br>
+var gotTheProperty = "calcAnnual" in plan1; <br>
+...the variable gotTheProperty is true. <br>
+Things to notice: <br>
+The property, a variable, is enclosed in quotation marks. We're not used to putting <br>
+JavaScript variables inside quotation marks, so this is something to make a note of. <br>
+The keyword is in—pretty intuitive. The code asks, "Is there a property called 'price' in <br>
+plan1?" <br>
+If you want a list of an object's properties, there's a spiffy way to do it: <br>
+1 var listOfProperties = []; <br>
+2 for (var prop in plan1) { <br>
+3 listOfProperties.push(prop); <br>
+4 } <br>
+Line 1 declares an empty array, listOfProperties. Lines 2-4 cycle through all the <br>
+properties of plan1, adding each property (push), including any methods, to the array <br>
+listOfProperties. Using the example we've been working with, the array <br>
+listOfProperties winds up with a value of <br>
+"name,price,space,transfer,pages,discountMonths,calcAnnual". <br>
+Note that, unlike a regular for loop, this one doesn't establish a limit on the number of <br>
+loops or increment a counter. After each iteration, JavaScript automatically moves to the next <br>
+property of the object and stops iterating when there are no more properties to enumerate. <br>
+Note also that instead of prop, you could use any other legal variable name. <br>
+In the example, the method, calcAnnual, wasn't included in the original definition of the <br>
+object plan1. It was later added to the prototype of the constructor function that I used to <br>
+create the object, and so became a property of the object by inheritance. The code above <br>
+includes inherited properties (including methods) in the collection. If you want to limit the lis <br>t
+of properties to those that have been explicitly declared for the object, omitting those that are <br>
+inherited from a prototype, you need to use hasOwnProperty. <br>
+1 var listOfProperties = []; <br>
+2 for (var prop in plan1) { <br>
+3 if (plan1.hasOwnProperty(prop)) { <br>
+4 listOfProperties.push(prop); <br>
+5 } <br>
+6 } <br>
+In the example above, each property in turn is assigned to the variable prop. Then the if <br>
+statement tests to see if it's a property owned by the object as opposed to being inherited <br>
+through a prototype. <br>
+You can of course test a literal property name instead of using a variable. <br>
+var isOwnedProperty = plan1.hasOwnProperty("price"); <br>
       </p>
     </div>
+
     <div class="moiz">
       <h1>Assignment</h1>
       <p class="ali">
