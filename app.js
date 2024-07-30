@@ -7,8 +7,17 @@ document.write('<button id="btn" onclick="ques1() ">Click Me</button>');
 document.write("<br>");
 document.write("<br>");
 function ques1() {
-
-}
+    var itemsArray = [
+        { name: "juice", price: 50, quantity: 3 },
+        { name: "cookie", price: 30, quantity: 9 },
+        { name: "shirt", price: 880, quantity: 1 },
+        { name: "pen", price: 100, quantity: 2 }
+    ];
+    var moiz = `${itemsArray[0].price * itemsArray[0].quantityitemsArray[1].price * itemsArray[1].quantityitemsArray[2].price * itemsArray[2].quantityitemsArray[3].price * itemsArray[3].quantity}`;
+    var resultcal = document.getElementById("result");
+    resultcal.innerText = moiz;
+};
+document.write("<div class='result'></div>")
 
 // question no 2
 
